@@ -14,10 +14,11 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo
-      # - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
+      - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
       # NOTE: change "fedora-39" string for image-version changes
     install:
       # - micro
+      - sddm-wayland-generic # dm
       # shell
       - fish
       - starship
@@ -30,22 +31,16 @@ modules:
       - qt6-qtwayland
       - waybar
       - wl-clipboard
-      - sddm-wayland-generic
-      # - swaylock-effects
-      # apps
-      # - dolphin
+      - swaylock-effects
     remove:
-      # sericea de
+      # de
       - sway
       - swayidle
       - swaybg
       - swaylock
       - sway-config-fedora
       - sway-systemd
-      # - sddm
       - sddm-wayland-sway
-      # apps
-      # - thunar
       - firefox
       - firefox-langpacks
 
