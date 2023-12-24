@@ -21,7 +21,7 @@ modules:
       - hyprland
       - mako
       - xdg-desktop-portal-hyprland
-      - polkit-kde-agent
+      - polkit-kde
       - qt5-qtwayland
       - qt6-qtwayland
       - waybar
