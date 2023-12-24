@@ -19,11 +19,17 @@ modules:
       - fish
       - starship
       - hyprland
+      - mako
+      - xdg-desktop-portal-hyprland
+      - polkit-kde-agent
+      - qt5-qtwayland
+      - qt6-qtwayland
       - waybar
       - wl-clipboard
       # - micro
     remove:
       - sway
+      - sway-systemd
       - firefox
       - firefox-langpacks
 
