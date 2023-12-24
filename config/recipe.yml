@@ -20,6 +20,7 @@ modules:
       - starship
       - hyprland
       - waybar
+      - wl-clipboard
       # - micro
     remove:
       - sway
