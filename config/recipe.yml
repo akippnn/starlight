@@ -18,20 +18,23 @@ modules:
       # NOTE: change "fedora-39" string for image-version changes
     install:
       # - micro
-      - sddm-wayland-generic # dm
+      # dm + deps
+      - sddm-wayland-generic
+      - qt5-qtquickcontrols2
+      - qt5-qtsvg
       # shell
       - fish
       - starship
-      # desktop environment
+      # de + deps
       - hyprland
       - mako
       - xdg-desktop-portal-hyprland
       - polkit-kde
-      - qt5-qtwayland
-      - qt6-qtwayland
       - waybar
       - wl-clipboard
       - swaylock-effects
+      - qt5-qtwayland
+      - qt6-qtwayland
     remove:
       # de
       - sway
