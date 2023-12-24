@@ -28,8 +28,6 @@ modules:
       - wl-clipboard
       # - micro
     remove:
-      - sway
-      - sway-systemd
       - firefox
       - firefox-langpacks
 
