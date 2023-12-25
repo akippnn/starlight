@@ -6,11 +6,12 @@ base-image: ghcr.io/ublue-os/sericea-main
 image-version: 39 # NOTE: Change version for Fedora 40 and so on
 
 modules:
+  # NOTE: change "fedora-39" string for image-version changes
   - type: rpm-ostree
     repos:
+      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-39/solopasha-hyprland-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
-      # NOTE: change "fedora-39" string for image-version changes
     install:
       # - micro
       # dm + deps
@@ -20,16 +21,17 @@ modules:
       # shell
       - fish
       - starship
-      # de + deps
+      # de + utils
       - hyprland
+      - eww-wayland-git
       - mako
       - xdg-desktop-portal-hyprland
       - polkit-kde
-      - waybar
       - wl-clipboard
       - swaylock-effects
       - qt5-qtwayland
       - qt6-qtwayland
+      - hyprshot
     remove:
       # de
       - sway
