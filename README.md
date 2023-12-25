@@ -18,16 +18,16 @@ For more info, check out the [uBlue homepage](https://universal-blue.org/) and t
 > There is a known issue with Ventoy at [ublue-os/main #108](https://github.com/ublue-os/main/issues/108). In the meantime, please use an alternative method to create bootable drives.
 
 
-Feel free to grab the ISO from the [releases page](https://github.com/akippnn/starlight/releases), flash it
+If you do not currently use an Fedora OSTree system, create a bootable drive using the ISO from the [releases page](https://github.com/akippnn/starlight/releases) and then boot to it.
 
-## Existing ostree installation
+## Existing OSTree installation
 
 To rebase an existing installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
   sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/akippnn/starlight:latest
-  systemctl reboo
+  systemctl reboot
   ```
 
 - Then rebase to the signed image, like so:
@@ -46,5 +46,5 @@ Available tags:
 
 ## Configuration
 
-- **Hyprland**
-  `starlight` runs Hyprland using `Hyprland -c /etc/hyprland.conf`. Feel free to configure this.
+- **Hyprland**  
+  `starlight` modifies `/usr/share/wayland-sessions/hyprland.desktop` to run Hyprland using `Hyprland -c /etc/hyprland.conf`. To configure Hyprland, please modify `/etc/hyprland.conf` instead.
