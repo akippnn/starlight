@@ -6,11 +6,6 @@ base-image: ghcr.io/ublue-os/sericea-main
 image-version: 39 # NOTE: Change version for Fedora 40 and so on
 
 modules:
-  - type: files
-    files:
-      - usr: /usr
-      # /etc should be inside /usr/etc
-
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo
@@ -46,6 +41,11 @@ modules:
       - sddm-wayland-sway
       - firefox
       - firefox-langpacks
+
+  - type: files
+    files:
+      - usr: /usr
+      # /etc should be inside /usr/etc
 
   - type: bling
     install:
