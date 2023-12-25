@@ -25,13 +25,15 @@ modules:
       - hyprland
       - eww-wayland-git
       - mako
+      - hyprshot
       - xdg-desktop-portal-hyprland
       - polkit-kde
       - wl-clipboard
       - swaylock-effects
+      # deps
       - qt5-qtwayland
       - qt6-qtwayland
-      - hyprshot
+      - adw-gtk3-theme
     remove:
       # de
       - sway
