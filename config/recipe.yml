@@ -27,13 +27,16 @@ modules:
       - mako
       - hyprshot
       - xdg-desktop-portal-hyprland
-      - polkit-kde
+      - polkit-gnome
       - wl-clipboard
       - swaylock-effects
       # deps
       - qt5-qtwayland
       - qt6-qtwayland
       - adw-gtk3-theme
+      # apps
+      - libvirt
+      - virt-manager
     remove:
       # de
       - sway
@@ -43,6 +46,7 @@ modules:
       - sway-config-fedora
       - sway-systemd
       - sddm-wayland-sway
+      # apps
       - firefox
       - firefox-langpacks
 
@@ -67,6 +71,7 @@ modules:
 
   - type: yafti
     custom-flatpaks: # this section is optional
+      - Firefox: org.mozilla.firefox
       - Warehouse: io.github.flattool.Warehouse
       # - Celluloid: io.github.celluloid_player.Celluloid
       # - Krita: org.kde.krita
