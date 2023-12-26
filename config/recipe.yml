@@ -23,7 +23,7 @@ modules:
       - starship
       # de + utils
       - hyprland
-      - eww-wayland-git
+      - aylurs-gtk-shell
       - mako
       - hyprshot
       - xdg-desktop-portal-hyprland
