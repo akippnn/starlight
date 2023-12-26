@@ -34,7 +34,7 @@ modules:
       - nemo
       - file-roller
       - nemo-audio-tab
-      - nemo-blueman
+      - blueman-nemo
       - nemo-compare
       - nemo-fileroller
       - nemo-preview
