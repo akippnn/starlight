@@ -7,9 +7,9 @@
 
 You lay in a clear field, feeling the midnight breeze as you stare into the starlight.
 
-"starlight" is a custom image based on [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint). The entire mechanism (build/release-iso workflows + recipe.yml parser + modules) belongs to them. "starlight" is simply a biased pre-configured system with all the basic necessities needed for a presentable and usable wlr-based system.
+"starlight" is a custom operating system based on Universal Blue's `startingpoint`. "starlight" is simply a biased preconfigured system with all the basic necessities needed for a presentable and usable wlr-based system.
 
-For more info, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
 
 ## Getting started
 
@@ -47,4 +47,4 @@ Available tags:
 ## Configuration
 
 - **Hyprland**  
-  `starlight` modifies `/usr/share/wayland-sessions/hyprland.desktop` to run Hyprland using `Hyprland -c /etc/hyprland.conf`. To configure Hyprland, please modify `/etc/hyprland.conf` instead.
+  To configure Hyprland, please modify `/etc/hyprland.conf` instead.
