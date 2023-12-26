@@ -9,8 +9,8 @@ modules:
   # NOTE: change "fedora-39" string for image-version changes
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-39/solopasha-hyprland-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo
+      - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-39/solopasha-hyprland-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
     install:
       # - micro
@@ -30,6 +30,15 @@ modules:
       - polkit-gnome
       - wl-clipboard
       - swaylock-effects
+      # fm
+      - nemo
+      - file-roller
+      - nemo-audio-tab
+      - nemo-blueman
+      - nemo-compare
+      - nemo-fileroller
+      - nemo-preview
+      - nemo-seahorse
       # deps
       - qt5-qtwayland
       - qt6-qtwayland
@@ -37,6 +46,7 @@ modules:
       # apps
       - libvirt
       - virt-manager
+      - seahorse
     remove:
       # de
       - sway
@@ -46,6 +56,9 @@ modules:
       - sway-config-fedora
       - sway-systemd
       - sddm-wayland-sway
+      # fm
+      - Thunar
+      - thunar-archive-plugin
       # apps
       - firefox
       - firefox-langpacks
