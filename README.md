@@ -7,9 +7,20 @@
 
 You lay in a clear field, feeling the midnight breeze as you stare into the starlight.
 
-"starlight" is a custom operating system based on Universal Blue's `startingpoint`. "starlight" is simply a biased preconfigured system with all the basic necessities needed for a presentable and usable wlr-based system.
+"starlight" is a custom operating system based on Universal Blue's `startingpoint`. "starlight" is simply a biased preconfigured system meant to be presentable and usable. More coming soon.
 
 For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
+
+## Unstable phase
+
+Right now, there are 
+
+- [ ] bar (indicators/media/tray)
+- [ ] wallpaper
+- [ ] volume/backlight
+- [ ] notification center
+- [ ] idle lockscreen
+- [ ] polish
 
 ## Getting started
 
@@ -47,4 +58,4 @@ Available tags:
 ## Configuration
 
 - **Hyprland**  
-  To configure Hyprland, please modify `/etc/hyprland.conf` instead.
+  To configure Hyprland, please modify `/etc/hyprland.conf` instead. To reset, copy the file from `/usr/etc/hyprland.conf`.
