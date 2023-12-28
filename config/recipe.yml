@@ -14,22 +14,30 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
     install:
       # - micro
-      # dm + deps
+      # CLI
+      - fish
+      - starship
+      # DM
       - sddm-wayland-generic
       - qt5-qtquickcontrols2
       - qt5-qtsvg
-      # shell
-      - fish
-      - starship
-      # de + utils
+      # hyprland
       - hyprland
-      - aylurs-gtk-shell
       - mako
       - hyprshot
+      # AGS
+      - aylurs-gtk-shell
+      - sassc
+      - swww
+      - brightnessctl
+      # DE misc
       - xdg-desktop-portal-hyprland
       - polkit-gnome
       - wl-clipboard
       - swaylock-effects
+      - qt5-qtwayland
+      - qt6-qtwayland
+      - adw-gtk3-theme
       # fm
       - nemo
       - file-roller
@@ -39,10 +47,6 @@ modules:
       - nemo-fileroller
       - nemo-preview
       - nemo-seahorse
-      # deps
-      - qt5-qtwayland
-      - qt6-qtwayland
-      - adw-gtk3-theme
       # apps
       - libvirt
       - virt-manager
