@@ -13,14 +13,7 @@ For more info about Universal Blue, check out <https://universal-blue.org/> and 
 
 ## Unstable phase
 
-Right now, there are 
-
-- [ ] bar (indicators/media/tray)
-- [ ] wallpaper
-- [ ] volume/backlight
-- [ ] notification center
-- [ ] idle lockscreen
-- [ ] polish
+Roadmap at https://github.com/users/akippnn/projects/3/
 
 ## Getting started
 
