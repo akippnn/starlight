@@ -9,11 +9,11 @@ modules:
   # NOTE: change "fedora-39" string for image-version changes
   - type: rpm-ostree
     repos:
+      - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-39/tofik-nwg-shell-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-39/solopasha-hyprland-fedora-39.repo
       - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
     install:
-      # - micro
       # CLI
       - fish
       - starship
@@ -23,18 +23,28 @@ modules:
       - qt5-qtsvg
       # hyprland
       - hyprland
-      - mako
+      - hyprpicker
       - hyprshot
       # AGS
       - aylurs-gtk-shell
       - sassc
       - swww
       - brightnessctl
+      - asusctl
+      - wl-gammactl
+      - gnome-software
+      - gnome-control-center
+      # nwg
+      # - nwg-panel
+      # - nwg-drawer
+      # - nwg-docker
+      # - nwg-display
       # DE misc
+      - mako
       - xdg-desktop-portal-hyprland
       - polkit-gnome
       - wl-clipboard
-      - swaylock-effects
+      # - swaylock-effects
       - qt5-qtwayland
       - qt6-qtwayland
       - adw-gtk3-theme
@@ -89,6 +99,7 @@ modules:
   - type: yafti
     custom-flatpaks: # this section is optional
       - Firefox: org.mozilla.firefox
+      - Spotify: com.spotify.Client
       - Warehouse: io.github.flattool.Warehouse
       # - Celluloid: io.github.celluloid_player.Celluloid
       # - Krita: org.kde.krita

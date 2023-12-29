@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=starlight
+Comment=starlight
+Exec=Hyprland -c /etc/starlight/hyprland.conf
+Type=Application
