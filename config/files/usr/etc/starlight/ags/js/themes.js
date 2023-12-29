@@ -50,7 +50,7 @@ export default [
         "battery.low": 30,
         "battery.medium": 50,
         "desktop.wallpaper.fg": "#fff",
-        "desktop.wallpaper.img": "/var/home/aki/.config/ags/assets/bg.jpg",
+        "desktop.wallpaper.img": WP + "starlight.jpg",
         "desktop.avatar": "/var/lib/AccountsService/icons/aki",
         "desktop.screen_corners": false,
         "desktop.clock.enable": true,
