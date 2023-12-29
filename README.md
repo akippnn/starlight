@@ -22,11 +22,12 @@ Roadmap at https://github.com/users/akippnn/projects/3/
 ## Getting started
 
 > [!warning] For Ventoy users
->
 > There is a known issue with Ventoy at [ublue-os/main #108](https://github.com/ublue-os/main/issues/108). In the meantime, please use an alternative method to create bootable drives.
 
 
-If you do not currently use an Fedora OSTree system, create a bootable drive using the ISO from the [releases page](https://github.com/akippnn/starlight/releases) and then boot to it.
+If you do not currently use Fedora OSTree system, create a bootable drive using the ISO from the [releases page](https://github.com/akippnn/starlight/releases) and then boot to it.
+
+Otherwise, see below.
 
 ## Existing OSTree installation
 
