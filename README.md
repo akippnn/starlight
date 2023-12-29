@@ -9,9 +9,13 @@ You lay in a clear field, feeling the midnight breeze as you stare into the star
 
 "starlight" is a custom operating system based on Universal Blue's `startingpoint`. "starlight" is simply a biased preconfigured system meant to be presentable and usable. More coming soon.
 
+Special thanks to [Aylur's GTK shell](https://github.com/Aylur/ags) and [Aylur's dotfiles](https://github.com/Aylur/dotfiles).
+
 For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
 
-## Unstable phase
+## It's too early
+
+![](assets/image.png)
 
 Roadmap at https://github.com/users/akippnn/projects/3/
 
