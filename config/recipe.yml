@@ -12,8 +12,8 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-39/atim-starship-fedora-39.repo # starship
       - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-39/solopasha-hyprland-fedora-39.repo # hyprland, etc.
       - https://copr.fedorainfracloud.org/coprs/gloriouseggroll/nobara-39/repo/fedora-39/gloriouseggroll-nobara-39-fedora-39.repo # asusctl
-      # - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-39/tofik-nwg-shell-fedora-39.repo # nwg
-      # - https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
+      #- https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-39/tofik-nwg-shell-fedora-39.repo # nwg
+      #- https://copr.fedorainfracloud.org/coprs/eddsalkield/swaylock-effects/repo/fedora-39/eddsalkield-swaylock-effects-fedora-39.repo
     install:
       # CLI
       - fish
@@ -36,16 +36,16 @@ modules:
       - gnome-software
       - gnome-control-center
       # nwg
-      # - nwg-panel
-      # - nwg-drawer
-      # - nwg-docker
-      # - nwg-display
+      #- nwg-panel
+      #- nwg-drawer
+      #- nwg-docker
+      #- nwg-display
       # DE misc
       - mako
       - xdg-desktop-portal-hyprland
       - polkit-gnome
       - wl-clipboard
-      # - swaylock-effects
+      #- swaylock-effects
       - qt5-qtwayland
       - qt6-qtwayland
       - adw-gtk3-theme
@@ -78,6 +78,25 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: default-flatpaks
+    notify: true   # Send notification after install/uninstall is finished (true/false)
+    system:
+    # If no repo information is specified, Flathub will be used by default
+      install:
+        - io.github.flattool.Warehouse
+      #remove:
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - Ubuntu
+        - Mononoki
+        - SourceCodePro
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
+
   - type: files
     files:
       - usr: /usr
@@ -88,20 +107,19 @@ modules:
       - justfiles
       - nix-installer
       - ublue-os-wallpapers
+      - laptop # installs TLP and configures your system for laptop usage
+      - flatpaksync # allows synchronization of user-installed flatpaks, see separate documentation section
       # - ublue-update # https://github.com/ublue-os/ublue-update
       # - 1password # install 1Password (stable) and `op` CLI tool
       # - dconf-update-service # a service unit that updates the dconf db on boot
       # - devpod # https://devpod.sh/ as an rpm
       # - gnome-vrr # enables gnome-vrr for your image
       # - container-tools # installs container-related tools onto /usr/bin: kind, kubectx, docker-compose and kubens
-      - laptop # installs TLP and configures your system for laptop usage
-      - flatpaksync # allows synchronization of user-installed flatpaks, see separate documentation section
 
   - type: yafti
     custom-flatpaks: # this section is optional
       - Firefox: org.mozilla.firefox
       - Spotify: com.spotify.Client
-      - Warehouse: io.github.flattool.Warehouse
       # - Celluloid: io.github.celluloid_player.Celluloid
       # - Krita: org.kde.krita
 
