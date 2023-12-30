@@ -73,7 +73,7 @@ export default [
             "org.gnome.Software"
         ],
         "notifications.black_list": [
-            "Spotify"
+            "spotify"
         ],
         "notifications.position": [
             "bottom"
