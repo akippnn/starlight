@@ -21,8 +21,8 @@ Roadmap at https://github.com/users/akippnn/projects/3/
 
 ## Getting started
 
-> [!warning] For Ventoy users
-> There is a known issue with Ventoy at [ublue-os/main #108](https://github.com/ublue-os/main/issues/108). In the meantime, please use an alternative method to create bootable drives.
+> [!warning]
+> Ventoy users, there is a known issue with Ventoy [ublue-os/main#108](https://github.com/ublue-os/main/issues/108). In the meantime, please use an alternative method to create bootable drives.
 
 
 If you do not currently use Fedora OSTree system, create a bootable drive using the ISO from the [releases page](https://github.com/akippnn/starlight/releases) and then boot to it.
@@ -53,7 +53,12 @@ Available tags:
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
   ```
 
-## Configuration
+## Troubleshooting
 
+- **Using Fish shell**  
+  starlight comes with the fish shell, but the default is bash. To change this, use `just chsh /bin/fish`. To return, 
 - **Hyprland**  
-  To configure Hyprland, please modify `/etc/hyprland.conf` instead. To reset, copy the file from `/usr/etc/hyprland.conf`.
+  For full control over the Hyprland setup, use the Hyprland session during login.
+- **Unneeded packages/apps**  
+  Use `rpm-ostree override remove [PACKAGE ...]`. For more info about overrides, see `rpm-ostree override`.
+  
