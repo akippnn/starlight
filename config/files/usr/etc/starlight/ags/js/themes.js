@@ -22,7 +22,7 @@ export default [
         "theme.scheme": "dark",
         "theme.bg": "transparentize(#171717, 0.3)",
         "theme.fg": "#eeeeee",
-        "theme.accent.accent": "$red",
+        "theme.accent.accent": "#6c6e85",
         "theme.accent.fg": "#141414",
         "theme.accent.gradient": "to right, $accent, lighten($accent, 6%)",
         "theme.widget.bg": "$fg-color",
