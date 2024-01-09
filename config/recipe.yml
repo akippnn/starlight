@@ -85,6 +85,7 @@ modules:
     # If no repo information is specified, Flathub will be used by default
       install:
         - io.github.flattool.Warehouse
+        - org.gnome.Loupe
       #remove:
   - type: fonts
     fonts:
