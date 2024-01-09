@@ -13,9 +13,11 @@ Special thanks to [Aylur's GTK shell](https://github.com/Aylur/ags) and [Aylur's
 
 For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
 
-## It's too early
+## Andromeda Release
 
 ![](assets/image.png)
+
+This first release includes a working setup.
 
 Roadmap at https://github.com/users/akippnn/projects/3/
 
@@ -57,7 +59,9 @@ Available tags:
 
 - **Using Fish shell**  
   starlight comes with the fish shell, but the default is bash. To change this, use `just chsh /bin/fish`. To return, 
-- **Hyprland**  
+- **Codecs and containers**
+  Use `rpm-ostree install [list of packages separated by spaces]`. For x264 and x265/HEVC, use `x264` and `x265` respectively. For AV1 encoder and decoder, use `rav1e` and `dav1d` respectively. Use `rpm-ostree search` to find the codecs/containers you need, or use [archwiki](https://wiki.archlinux.org/title/Codecs_and_containers).
+- **Hyprland configuration**  
   For full control over the Hyprland setup, use the Hyprland session during login.
 - **Unneeded packages/apps**  
   Use `rpm-ostree override remove [PACKAGE ...]`. For more info about overrides, see `rpm-ostree override`.
