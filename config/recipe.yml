@@ -66,12 +66,12 @@ modules:
     remove:
       # de
       - sway
-      - swayidle
       - swaybg
       - swaylock
       - sway-config-fedora
       - sway-systemd
       - sddm-wayland-sway
+      - xdg-desktop-portal-wlr
       # fm
       - Thunar
       - thunar-archive-plugin
