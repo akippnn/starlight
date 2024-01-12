@@ -8,7 +8,7 @@ export default [
     Theme({
         "name": "starlight",
         "icon": "🌠",
-        'desktop.wallpaper.img': WP + 'leaves.jpg',
+        'desktop.wallpaper.img': WP + 'starlight.jpg',
         "theme.accent.accent": "#6c6e85",
         "theme.accent.gradient": "to right, $accent, lighten($accent, 6%)",
         'theme.widget.opacity': 95,
