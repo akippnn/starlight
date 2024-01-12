@@ -43,7 +43,7 @@ To rebase an existing installation to the latest build:
 
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/akippnn/starlight:latest
+  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/akippnn/starlight:latest
   systemctl reboot
   ```
 
@@ -52,7 +52,7 @@ Available tags:
 - `39`
 - This repository builds date tags as well, so if you want to rebase to a particular day's build:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
+  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
   ```
 
 ## Troubleshooting
@@ -60,9 +60,11 @@ Available tags:
 - **Using Fish shell**  
   starlight comes with the fish shell, but the default is bash. To change this, use `just chsh /bin/fish`. To return, 
 - **Codecs and containers**
-  Use `rpm-ostree install [list of packages separated by spaces]`. For x264 and x265/HEVC, use `x264` and `x265` respectively. For AV1 encoder and decoder, use `rav1e` and `dav1d` respectively. Use `rpm-ostree search` to find the codecs/containers you need, or use [archwiki](https://wiki.archlinux.org/title/Codecs_and_containers).
+  Use `sudo rpm-ostree install [list of packages separated by spaces]`. For x264 and x265/HEVC, use `x264` and `x265` respectively. For AV1 encoder and decoder, use `rav1e` and `dav1d` respectively. Use `rpm-ostree search` to find the codecs/containers you need, or use [archwiki](https://wiki.archlinux.org/title/Codecs_and_containers).
+- **Software app does not have "Updates" tab**
+  Use `gsettings set org.gnome.software [key] true`. The following keys are `allow-updates`, `download-updates`, and `download-updates-notify`.
+- **Unneeded packages/apps**  
+  Use `sudo rpm-ostree override remove [PACKAGE ...]`. For more info about overrides, see `rpm-ostree override`.
 - **Hyprland configuration**  
   For full control over the Hyprland setup, use the Hyprland session during login.
-- **Unneeded packages/apps**  
-  Use `rpm-ostree override remove [PACKAGE ...]`. For more info about overrides, see `rpm-ostree override`.
   
