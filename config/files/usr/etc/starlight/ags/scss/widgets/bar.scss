@@ -10,7 +10,7 @@ $button-radius: if($bar-style == 'floating', max(0, $radii - $bar-spacing), $rad
         > * {
             @include floating-widget;
             border-radius: $radii;
-            margin: ($wm-gaps/1.70) $bar-spacing;
+            margin: $wm-gaps $bar-spacing;
             transition: $transition;
         }
 
