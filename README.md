@@ -3,21 +3,17 @@
 > [!warning]
 > Currently in unstable phase. Do not use in production.
 
-[![build-starlight](https://github.com/akippnn/starlight/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
+[![build-starlight](https://github.com/akippnn/starlight/actions/workflows/build.yml/badge.svg)](https://github.com/akippnn/starlight/actions/workflows/build.yml)
 
 You lay in a clear field, feeling the midnight breeze as you stare into the starlight.
 
 "starlight" is a custom operating system based on Universal Blue's `startingpoint`. "starlight" is simply a biased preconfigured system meant to be presentable and usable. More coming soon.
 
-Special thanks to [Aylur's GTK shell](https://github.com/Aylur/ags) and [Aylur's dotfiles](https://github.com/Aylur/dotfiles).
-
-For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
-
 ## Andromeda Release
 
 ![](assets/image.png)
 
-This first release includes a working setup.
+This first release includes a working setup, however is considered unstable.
 
 Roadmap at https://github.com/users/akippnn/projects/3/
 
@@ -68,3 +64,8 @@ Available tags:
 - **Hyprland configuration**  
   For full control over the Hyprland setup, use the Hyprland session during login.
   
+## Credits
+
+A custom operating system image based on Fedora, thanks to Universal Blue. For more info about Universal Blue, check out <https://universal-blue.org/> and their main repository at <https://github.com/ublue-os/main/>.
+
+- Shell: [Aylur's GTK shell](https://github.com/Aylur/ags) (config: [Aylur's dotfiles](https://github.com/Aylur/dotfiles))
