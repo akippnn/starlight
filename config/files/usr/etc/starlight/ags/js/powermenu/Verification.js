@@ -16,7 +16,7 @@ export default () => ShadedPopup({
                 children: [
                     Widget.Label({
                         class_name: 'title',
-                        label: PowerMenu.bind('title'),
+                        binds: [['label', PowerMenu, 'title']],
                     }),
                     Widget.Label({
                         class_name: 'desc',

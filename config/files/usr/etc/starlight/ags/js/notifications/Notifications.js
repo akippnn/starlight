@@ -44,10 +44,14 @@ const Popups = parent => {
         });
     };
 
-    return Widget.Box({ vertical: true })
-        .hook(Notifications, onNotified, 'notified')
-        .hook(Notifications, onDismissed, 'dismissed')
-        .hook(Notifications, (box, id) => onDismissed(box, id, true), 'closed');
+    return Widget.Box({
+        vertical: true,
+        connections: [
+            [Notifications, onNotified, 'notified'],
+            [Notifications, onDismissed, 'dismissed'],
+            [Notifications, (box, id) => onDismissed(box, id, true), 'closed'],
+        ],
+    });
 };
 
 /** @param {import('types/widgets/revealer').RevealerProps['transition']} transition */
@@ -66,6 +70,6 @@ export default monitor => Widget.Window({
     monitor,
     name: `notifications${monitor}`,
     class_name: 'notifications',
-    anchor: options.notifications.position.bind('value'),
+    binds: [['anchor', options.notifications.position]],
     child: PopupList(),
 });

@@ -12,15 +12,17 @@ import options from '../options.js';
 const SysProgress = (type, title, unit) => Widget.Box({
     class_name: `circular-progress-box ${type}`,
     hexpand: true,
-    tooltip_text: vars[type].bind('value')
-        .transform(v => `${title}: ${Math.floor(v * 100)}${unit}`),
+    binds: [['tooltipText', vars[type], 'value', v =>
+        `${title}: ${Math.floor(v * 100)}${unit}`]],
     child: Widget.CircularProgress({
         hexpand: true,
         class_name: `circular-progress ${type}`,
         child: Widget.Icon(icons.system[type]),
         start_at: 0.75,
-        value: vars[type].bind(),
-        rounded: options.radii.bind('value').transform(v => v > 0),
+        binds: [
+            ['value', vars[type]],
+            ['rounded', options.radii, 'value', v => v > 0],
+        ],
     }),
 });
 
@@ -35,7 +37,7 @@ export default () => Widget.Box({
                 Clock({ format: '%H:%M' }),
                 Widget.Label({
                     class_name: 'uptime',
-                    label: vars.uptime.bind('value').transform(t => `uptime: ${t}`),
+                    binds: [['label', vars.uptime, 'value', t => `uptime: ${t}`]],
                 }),
             ],
         }),

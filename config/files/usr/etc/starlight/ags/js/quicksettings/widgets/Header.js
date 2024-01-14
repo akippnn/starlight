@@ -19,18 +19,18 @@ export default () => Widget.Box({
                 Widget.Box({
                     class_name: 'battery horizontal',
                     children: [
-                        Widget.Icon({ icon: Battery.bind('icon_name') }),
-                        Widget.Label({ label: Battery.bind('percent').transform(p => `${p}%`) }),
+                        Widget.Icon({ binds: [['icon', Battery, 'icon-name']] }),
+                        Widget.Label({ binds: [['label', Battery, 'percent', p => `${p}%`]] }),
                     ],
                 }),
                 Widget.Label({
                     class_name: 'uptime',
-                    label: uptime.bind().transform(v => `up: ${v}`),
+                    binds: [['label', uptime, 'value', v => `up: ${v}`]],
                 }),
-                Widget.Button({
-                    on_clicked: openSettings,
-                    child: Widget.Icon(icons.ui.settings),
-                }),
+                // Widget.Button({
+                //     on_clicked: openSettings,
+                //     child: Widget.Icon(icons.ui.settings),
+                // }),
                 Widget.Button({
                     on_clicked: () => Lockscreen.lockscreen(),
                     child: Widget.Icon(icons.lock),

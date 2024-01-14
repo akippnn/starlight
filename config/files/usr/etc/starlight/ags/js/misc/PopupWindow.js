@@ -4,9 +4,15 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import options from '../options.js';
 import GObject from 'gi://GObject';
 
-export class PopupWindow extends AgsWindow {
+class PopupWindow extends AgsWindow {
     static { GObject.registerClass(this); }
 
+    /** @param {import('types/widgets/window').WindowProps & {
+     *      name: string
+     *      child: import('types/widgets/box').default
+     *      transition?: import('types/widgets/revealer').RevealerProps['transition']
+     *  }} o
+     */
     constructor({ name, child, transition = 'none', visible = false, ...rest }) {
         super({
             ...rest,
@@ -20,11 +26,11 @@ export class PopupWindow extends AgsWindow {
         this.revealer = Widget.Revealer({
             transition,
             child,
-            transition_duration: options.transition.value,
-            setup: self => self.hook(App, (_, wname, visible) => {
+            transitionDuration: options.transition.value,
+            connections: [[App, (_, wname, visible) => {
                 if (wname === name)
                     this.revealer.reveal_child = visible;
-            }),
+            }]],
         });
 
         this.child = Widget.Box({
@@ -39,6 +45,8 @@ export class PopupWindow extends AgsWindow {
     set transition(dir) { this.revealer.transition = dir; }
     get transition() { return this.revealer.transition; }
 }
+
+
 
 /** @param {import('types/widgets/window').WindowProps & {
  *      name: string

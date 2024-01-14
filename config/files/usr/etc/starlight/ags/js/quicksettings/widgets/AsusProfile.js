@@ -7,10 +7,10 @@ import { ArrowToggleButton, Menu } from '../ToggleButton.js';
 export const ProfileToggle = () => ArrowToggleButton({
     name: 'asusctl-profile',
     icon: Widget.Icon({
-        icon: Asusctl.bind('profile').transform(p => icons.asusctl.profile[p]),
+        binds: [['icon', Asusctl, 'profile', p => icons.asusctl.profile[p]]],
     }),
     label: Widget.Label({
-        label: Asusctl.bind('profile'),
+        binds: [['label', Asusctl, 'profile']],
     }),
     connection: [Asusctl, () => Asusctl.profile !== 'Balanced'],
     activate: () => Asusctl.setProfile('Quiet'),
@@ -21,7 +21,7 @@ export const ProfileToggle = () => ArrowToggleButton({
 export const ProfileSelector = () => Menu({
     name: 'asusctl-profile',
     icon: Widget.Icon({
-        icon: Asusctl.bind('profile').transform(p => icons.asusctl.profile[p]),
+        binds: [['icon', Asusctl, 'profile', p => icons.asusctl.profile[p]]],
     }),
     title: Widget.Label('Profile Selector'),
     content: [

@@ -3,7 +3,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 
 /**
  * @typedef {Object} PanelButtonProps
- * @property {import('types/widgets/button').ButtonProps['child']} content
+ * @property {any} content
  * @property {string=} window
  */
 
@@ -14,31 +14,30 @@ export default ({
     class_name,
     content,
     window = '',
-    setup,
+    connections = [],
     ...rest
-}) => Widget.Button({
-    class_name: `panel-button ${class_name}`,
-    child: Widget.Box({ children: [content] }),
-    setup: self => {
-        let open = false;
+}) => {
+    let open = false;
 
-        self.hook(App, (_, win, visible) => {
-            if (win !== window)
-                return;
+    const connection = [App, (self, win, visible) => {
+        if (win !== window)
+            return;
 
-            if (open && !visible) {
-                open = false;
-                self.toggleClassName('active', false);
-            }
+        if (open && !visible) {
+            open = false;
+            self.toggleClassName('active', false);
+        }
 
-            if (visible) {
-                open = true;
-                self.toggleClassName('active');
-            }
-        });
+        if (visible) {
+            open = true;
+            self.toggleClassName('active');
+        }
+    }];
 
-        if (setup)
-            setup(self);
-    },
-    ...rest,
-});
+    return Widget.Button({
+        class_name: `panel-button ${class_name}`,
+        child: Widget.Box({ children: [content] }),
+        connections: connections.concat([connection]),
+        ...rest,
+    });
+};

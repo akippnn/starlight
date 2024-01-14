@@ -6,7 +6,7 @@ import Layer from 'gi://GtkLayerShell';
 const PasswordEntry = () => Widget.Box({
     children: [
         Widget.Entry({
-            setup: self => self.hook(Lockscreen, () => self.text = '', 'lock'),
+            connections: [[Lockscreen, entry => entry.text = '', 'lock']],
             visibility: false,
             placeholder_text: 'Password',
             on_accept: ({ text }) => Lockscreen.auth(text || ''),
@@ -16,7 +16,7 @@ const PasswordEntry = () => Widget.Box({
         Widget.Spinner({
             active: true,
             vpack: 'center',
-            setup: self => self.hook(Lockscreen, (_, auth) => self.visible = auth, 'authenticating'),
+            connections: [[Lockscreen, (w, auth) => w.visible = auth, 'authenticating']],
         }),
     ],
 });
@@ -29,7 +29,7 @@ export default monitor => {
         monitor,
         layer: 'overlay',
         visible: false,
-        setup: self => self.hook(Lockscreen, (_, lock) => self.visible = lock, 'lock'),
+        connections: [[Lockscreen, (w, lock) => w.visible = lock, 'lock']],
         child: Widget.Box({
             css: 'min-width: 3000px; min-height: 2000px;',
             class_name: 'shader',

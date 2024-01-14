@@ -6,14 +6,14 @@ import options from '../../options.js';
 import { substitute } from '../../utils.js';
 
 export const ClientLabel = () => Widget.Label({
-    label: Hyprland.active.client.bind('class').transform(c => {
+    binds: [['label', Hyprland.active.client, 'class', c => {
         const { titles } = options.substitutions;
         return substitute(titles, c);
-    }),
+    }]],
 });
 
 export const ClientIcon = () => Widget.Icon({
-    setup: self => self.hook(Hyprland.active.client, () => {
+    connections: [[Hyprland.active.client, self => {
         const { icons } = options.substitutions;
         const { client } = Hyprland.active;
 
@@ -30,16 +30,16 @@ export const ClientIcon = () => Widget.Icon({
             self.icon = titleIcon;
 
         self.visible = !!(hasTitleIcon || hasClassIcon);
-    }),
+    }]],
 });
 
 export default () => PanelButton({
     class_name: 'focused-client',
     content: Widget.Box({
-        tooltip_text: Hyprland.active.bind('client').transform(c => c.title),
         children: [
             ClientIcon(),
             ClientLabel(),
         ],
+        binds: [['tooltip-text', Hyprland.active, 'client', c => c.title]],
     }),
 });

@@ -1,10 +1,6 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
-/** @param {import('types/widgets/box').BoxProps & {
- *      width: number
- *      height: number
- * }} o */
 export default ({
     height = 18,
     width = 180,
@@ -31,7 +27,7 @@ export default ({
             min-height: ${height}px;
         `,
         children: [fill],
-        attribute: value => {
+        setup: progress => progress.setValue = value => {
             if (value < 0)
                 return;
 

@@ -9,8 +9,8 @@ export default () => PanelButton({
     window: 'overview',
     on_clicked: () => App.toggleWindow('overview'),
     content: FontIcon({
-        label: options.bar.icon.bind('value').transform(v => {
+        binds: [['icon', options.bar.icon, 'value', v => {
             return v === 'distro-icon' ? distroIcon : v;
-        }),
+        }]],
     }),
 });

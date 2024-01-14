@@ -13,16 +13,16 @@ const System = type => {
     const progress = Widget.Box({
         class_name: 'progress',
         child: Widget.CircularProgress({
-            value: variables[type].bind(),
+            binds: [['value', variables[type]]],
         }),
     });
 
     const revealer = Widget.Revealer({
         transition: 'slide_right',
         child: Widget.Label({
-            label: variables[type].bind('value').transform(v => {
+            binds: [['label', variables[type], 'value', v => {
                 return ` ${type}: ${Math.round(v * 100)}%`;
-            }),
+            }]],
         }),
     });
 

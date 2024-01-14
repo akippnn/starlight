@@ -9,14 +9,14 @@ export const OnScreenIndicator = ({ height = 300, width = 48 } = {}) => Widget.B
     css: 'padding: 1px;',
     child: Widget.Revealer({
         transition: 'slide_left',
-        setup: self => self.hook(Indicator, (_, value) => {
-            self.reveal_child = value > -1;
-        }),
+        connections: [[Indicator, (revealer, value) => {
+            revealer.reveal_child = value > -1;
+        }]],
         child: Progress({
             width,
             height,
             vertical: true,
-            setup: self => self.hook(Indicator, (_, value) => self.attribute(value)),
+            connections: [[Indicator, (progress, value) => progress.setValue(value)]],
             child: Widget.Stack({
                 vpack: 'start',
                 hpack: 'center',
@@ -25,18 +25,18 @@ export const OnScreenIndicator = ({ height = 300, width = 48 } = {}) => Widget.B
                     ['true', Widget.Icon({
                         hpack: 'center',
                         size: width,
-                        setup: w => w.hook(Indicator, (_, _v, name) => w.icon = name || ''),
+                        connections: [[Indicator, (icon, _v, name) => icon.icon = name || '']],
                     })],
                     ['false', FontIcon({
                         hpack: 'center',
                         hexpand: true,
                         css: `font-size: ${width}px;`,
-                        setup: w => w.hook(Indicator, (_, _v, name) => w.label = name || ''),
+                        connections: [[Indicator, (icon, _v, name) => icon.icon = name || '']],
                     })],
                 ],
-                setup: self => self.hook(Indicator, (_, _v, name) => {
-                    self.shown = `${!!Utils.lookUpIcon(name)}`;
-                }),
+                connections: [[Indicator, (stack, _v, name) => {
+                    stack.shown = `${!!Utils.lookUpIcon(name)}`;
+                }]],
             }),
         }),
     }),

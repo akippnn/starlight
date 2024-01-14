@@ -10,12 +10,13 @@ const ClearButton = () => Widget.Button({
         for (let i = 0; i < list.length; i++)
             timeout(50 * i, () => list[i]?.close());
     },
-    sensitive: Notifications.bind('notifications').transform(n => n.length > 0),
+    binds: [['sensitive', Notifications, 'notifications', n => n.length > 0]],
     child: Widget.Box({
         children: [
             Widget.Label('Clear '),
             Widget.Icon({
-                icon: Notifications.bind('notifications').transform(n => icons.trash[n.length > 0 ? 'full' : 'empty']),
+                binds: [['icon', Notifications, 'notifications', n =>
+                    n.length > 0 ? icons.trash.full : icons.trash.empty]],
             }),
         ],
     }),
@@ -32,8 +33,12 @@ const Header = () => Widget.Box({
 const NotificationList = () => Widget.Box({
     vertical: true,
     vexpand: true,
-    children: Notifications.bind('notifications').transform(n => n.reverse().map(Notification)),
-    visible: Notifications.bind('notifications').transform(n => n.length > 0),
+    connections: [[Notifications, box => {
+        box.children = Notifications.notifications
+            .reverse().map(Notification);
+
+        box.visible = Notifications.notifications.length > 0;
+    }]],
 });
 
 const Placeholder = () => Widget.Box({
@@ -43,11 +48,11 @@ const Placeholder = () => Widget.Box({
     hpack: 'center',
     vexpand: true,
     hexpand: true,
-    visible: Notifications.bind('notifications').transform(n => n.length === 0),
     children: [
         Widget.Icon(icons.notifications.silent),
         Widget.Label('Your inbox is empty'),
     ],
+    binds: [['visible', Notifications, 'notifications', n => n.length === 0]],
 });
 
 export default () => Widget.Box({

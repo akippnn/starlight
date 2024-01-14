@@ -9,7 +9,7 @@ class Asusctl extends Service {
         });
     }
 
-    profiles = /** @type {const} */ (['Performance', 'Balanced', 'Quiet']);
+    profiles = Object.freeze(['Performance', 'Balanced', 'Quiet']);
     #profile = 'Balanced';
     #mode = 'Hyprid';
 
