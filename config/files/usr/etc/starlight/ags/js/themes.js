@@ -15,7 +15,6 @@ export default [
         'border.opacity': 97,
         'theme.bg': 'transparentize(#171717, 0.3)',
         "bar.style": "separated",
-        'font.font': "Ubuntu Nerd Font Regular",
     }),
     Theme({
         name: 'Leaves',
