@@ -1,0 +1,3 @@
+[submodule "config/files/usr/etc/starlight/starlight-shell"]
+	path = config/files/usr/etc/starlight/starlight-shell
+	url = git@github.com:akippnn/starlight-shell.git
