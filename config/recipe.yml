@@ -20,6 +20,7 @@ modules:
       - starship
       # DM
       - sddm-wayland-generic
+      - qt5-qtquickcontrols
       - qt5-qtquickcontrols2
       - qt5-qtsvg
       # hyprland
