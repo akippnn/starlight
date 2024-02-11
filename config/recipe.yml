@@ -74,7 +74,6 @@ modules:
       - sway-systemd
       - sddm-wayland-sway
       - xdg-desktop-portal-wlr
-      - wofi
       # fm
       - Thunar
       - thunar-archive-plugin
