@@ -1,7 +1,7 @@
 # starlight
 
 > [!warning]
-> Currently in unstable phase. Do not use in production.
+> No longer maintained. Proceed with your own risk.
 
 [![build-starlight](https://github.com/akippnn/starlight/actions/workflows/build.yml/badge.svg)](https://github.com/akippnn/starlight/actions/workflows/build.yml)
 
